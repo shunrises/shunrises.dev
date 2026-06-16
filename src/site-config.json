@@ -1,6 +1,22 @@
 {
   "github": { "owner": "shunrises", "repo": "shunrises.dev" },
   "domain": "https://shunrises.dev",
+  "giscus": {
+    "enabled": true,
+    "repo": "shunrises/shunrises.dev",
+    "repoId": "R_kgDOS8LG5Q",
+    "category": "Announcements",
+    "categoryId": "DIC_kwDOS8LG5c4C_RO9",
+    "mapping": "pathname",
+    "strict": "1",
+    "reactionsEnabled": "1",
+    "emitMetadata": "0",
+    "inputPosition": "bottom",
+    "theme": "https://shunrises.dev/giscus-light.css",
+    "darkTheme": "https://shunrises.dev/giscus-dark.css",
+    "lang": "ko",
+    "loading": "lazy"
+  },
   "bNavigation": true,
   "homeLabel": "home",
   "navigationItems": ["portfolio", "blog"],

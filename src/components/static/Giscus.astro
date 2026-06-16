@@ -1,0 +1,115 @@
+---
+import siteConfig from "@/site-config.json";
+
+const giscus = siteConfig.giscus;
+const isConfigured = Boolean(giscus.enabled && giscus.repoId && giscus.categoryId);
+const shouldShowSetupNotice = import.meta.env.DEV && !isConfigured;
+const canUseCustomTheme = Astro.url.protocol === "https:";
+const lightTheme = canUseCustomTheme ? new URL("/giscus-light.css", Astro.url.origin).toString() : "light";
+const darkTheme = canUseCustomTheme ? new URL("/giscus-dark.css", Astro.url.origin).toString() : "dark";
+---
+
+{
+    shouldShowSetupNotice ? (
+        <section class="mt-10 border border-border bg-muted/30 p-6 text-sm text-muted-foreground" aria-label="Comments setup">
+            <p class="font-medium text-foreground">giscus 설정이 아직 완료되지 않았습니다.</p>
+            <p class="mt-2">
+                giscus 설정 페이지에서 생성된 <code>data-repo-id</code>와 <code>data-category-id</code>를
+                <code> src/site-config.json</code>에 넣고 <code>enabled</code>를 <code>true</code>로 바꾸면 댓글창이 표시됩니다.
+            </p>
+        </section>
+    ) : isConfigured && (
+        <section
+            class="mt-10 border border-border bg-background p-6"
+            aria-label="Comments"
+            data-giscus-root
+            data-light-theme={lightTheme}
+            data-dark-theme={darkTheme}
+            data-repo={giscus.repo}
+            data-repo-id={giscus.repoId}
+            data-category={giscus.category}
+            data-category-id={giscus.categoryId}
+            data-mapping={giscus.mapping}
+            data-strict={giscus.strict}
+            data-reactions-enabled={giscus.reactionsEnabled}
+            data-emit-metadata={giscus.emitMetadata}
+            data-input-position={giscus.inputPosition}
+            data-lang={giscus.lang}
+            data-loading={giscus.loading}
+        >
+            <script is:inline>
+                (() => {
+                    const root = document.querySelector("[data-giscus-root]");
+                    if (!root) return;
+
+                    const getTheme = () =>
+                        document.documentElement.classList.contains("dark")
+                            ? root.dataset.darkTheme
+                            : root.dataset.lightTheme;
+
+                    const mountGiscus = () => {
+                        if (root.querySelector("script[src='https://giscus.app/client.js']")) return;
+
+                        const script = document.createElement("script");
+                        script.src = "https://giscus.app/client.js";
+                        script.async = true;
+                        script.crossOrigin = "anonymous";
+                        script.dataset.repo = root.dataset.repo;
+                        script.dataset.repoId = root.dataset.repoId;
+                        script.dataset.category = root.dataset.category;
+                        script.dataset.categoryId = root.dataset.categoryId;
+                        script.dataset.mapping = root.dataset.mapping;
+                        script.dataset.strict = root.dataset.strict;
+                        script.dataset.reactionsEnabled = root.dataset.reactionsEnabled;
+                        script.dataset.emitMetadata = root.dataset.emitMetadata;
+                        script.dataset.inputPosition = root.dataset.inputPosition;
+                        script.dataset.theme = getTheme();
+                        script.dataset.lang = root.dataset.lang;
+                        script.dataset.loading = root.dataset.loading;
+                        root.append(script);
+                    };
+
+                    const sendTheme = () => {
+                        const frame = document.querySelector("iframe.giscus-frame");
+                        if (!frame?.contentWindow) return false;
+
+                        frame.contentWindow.postMessage(
+                            {
+                                giscus: {
+                                    setConfig: {
+                                        theme: getTheme(),
+                                    },
+                                },
+                            },
+                            "https://giscus.app",
+                        );
+                        return true;
+                    };
+
+                    mountGiscus();
+
+                    const themeObserver = new MutationObserver(sendTheme);
+                    themeObserver.observe(document.documentElement, {
+                        attributes: true,
+                        attributeFilter: ["class", "data-theme"],
+                    });
+
+                    const frameObserver = new MutationObserver(sendTheme);
+                    frameObserver.observe(root, {
+                        childList: true,
+                        subtree: true,
+                    });
+
+                    let attempts = 0;
+                    const timer = window.setInterval(() => {
+                        attempts += 1;
+                        const didSend = sendTheme();
+                        if (didSend || attempts >= 20) {
+                            window.clearInterval(timer);
+                        }
+                    }, 300);
+                })();
+            </script>
+        </section>
+    )
+}

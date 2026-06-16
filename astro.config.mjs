@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
+import { unified } from "@astrojs/markdown-remark";
+import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -11,6 +13,11 @@ import rehypeKatex from "rehype-katex";
 import rehypeFigure from "rehype-figure";
 import mermaid from "astro-mermaid";
 
+const markdownProcessor = unified({
+  remarkPlugins: [remarkMath],
+  rehypePlugins: [[rehypeExternalLinks, { target: "_blank", rel: ["nofollow", "noopener", "noreferrer"] }], rehypeKatex, rehypeFigure],
+});
+
 // https://astro.build/config
 export default defineConfig({
   devToolbar: { enabled: false },
@@ -19,6 +26,9 @@ export default defineConfig({
     mermaid({
       theme: "neutral",
       autoTheme: true,
+    }),
+    mdx({
+      processor: markdownProcessor,
     }),
     react(),
     sitemap(),
@@ -32,8 +42,7 @@ export default defineConfig({
       },
       wrap: true,
     },
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [[rehypeExternalLinks, { target: "_blank", rel: ["nofollow", "noopener", "noreferrer"] }], rehypeKatex, rehypeFigure],
+    processor: markdownProcessor,
   },
 
   vite: {

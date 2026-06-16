@@ -1,0 +1,29 @@
+---
+draft: false
+date: "17-03-2021"
+title: "앱 설치 트래킹"
+category: "devlog"
+tags: ["firebase", "posthog", "tracking", "flutter", "petner"]
+author: "Siyoon Lee"
+---
+
+현재 계획
+
+ruby gem으로 firebase dynamic link를 만들고 firebase dynamic link를 flutter 앱에서 확인하기
+
+1. distinct_id를 get_distinct_id를 통해 javascript 변수를 ruby에서 쓸 수 있도록 해야 한다.
+- ajax를 써야 할 것 같은데 어떻게 할 수 있을지는 아직 잘 모르겠다.
+
+2. ruby에서 distinct_id가 들어간 link를 만들어 준 후, 이 링크를 html href에 넣어 준다.
+
+문제점
+
+1. flutter에서 getInitialLink가 잘 작동할지?
+
+2. ajax 써서 만들어야 하는데 과연... 잘 사용할 수 있을지
+
+2021.03.19 추가
+
+\- ruby gem으로 firebase dynamic link를 만드는 것과 javascript로 rest api를 사용해서 만드는 것과 요구하는 것이 다른 것 같다.
+
+후자가 더욱 간편한 것 같다.

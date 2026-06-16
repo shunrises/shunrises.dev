@@ -1,0 +1,17 @@
+---
+draft: false
+date: "22-03-2021"
+title: "Posthog + Flutter Firebase Dynamic Link로 앱 설치 트래킹 하기"
+category: "engineering"
+tags: ["flutter", "firebase", "posthog", "dart", "tracking"]
+author: "Siyoon Lee"
+---
+
+[posthog + firebase dynamic link 앱 설치 트래킹 javascript](/blog/posthog-firebase-dynamic-link-js)
+
+여기에서 쓴 방식으로 posthog에서 부여한 distinct_id를 가지고 우리의 웹에서 어떤 행동을 했던 유저가 앱을 설치하고, 앱에서 어떤 활동을 하는지 추적한다.
+
+Flutter Firebase dynamic link package를 사용해서 앱 실행이 시작된 url을 받아오고, url 제일 뒤에 distinct id를 String으로 저장한 후,
+identify를 해 주면 된다.
+
+posthog 기록을 위해 경우의 수를 고려해 줘야 하는데, 이는 고려해 보고 다시 수정할 예정.

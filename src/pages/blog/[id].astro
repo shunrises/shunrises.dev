@@ -1,5 +1,6 @@
 ---
 import IdHeader from "@/components/static/IdHeader.astro";
+import Giscus from "@/components/static/Giscus.astro";
 import IdLayout from "@/layouts/IdLayout.astro";
 import { getCollection, render } from "astro:content";
 import { parse } from "date-fns";
@@ -47,5 +48,7 @@ const pubDate = parse(item.data.date, "dd-MM-yyyy", new Date());
         <div class="mt-10 prose border border-border p-6">
             <Content />
         </div>
+
+        <Giscus />
     </article>
 </IdLayout>

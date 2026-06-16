@@ -1,0 +1,48 @@
+---
+draft: false
+date: "11-03-2021"
+title: "Git 히스토리 단장하기"
+category: "engineering"
+tags: ["git", "rebase"]
+author: "Siyoon Lee"
+---
+
+1. 마지막 커밋 수정
+
+커밋 메시지 수정
+
+```bash
+git commit --amend
+```
+
+=> 텍스트 편집기를 실행시켜서 마지막 커밋 메시지를 열어 준다. 메시지를 바꾸고 편집기를 닫으면 편집기는 바뀐 메시지로 마지막 커밋을 수정한다.
+
+2. rebase
+
+```bash
+git rebase -i HEAD~N
+```
+
+현재 commit으로부터 N개의 commit에 대해 합침, 제거, 메시지 수정 등이 가능하다.
+
+=> vi창에서
+
+```text
+pick 어쩌구저쩌구1
+pick 어쩌구저쩌구2
+pick 어쩌구저쩌구3
+```
+
+어쩌구저쩌구2, 3을 어쩌구저쩌구1과 합치고 싶을 때는 2와 3의 pick을 s로 바꿔 주고 :wq로 저장하고 종료해 준다.
+
+커밋 메시지 수정하기
+
+합쳐서 보여 줄 커밋 메시지를 수정할 수 있다. 원하는 메시지로 변경해서 :wq를 눌러 저장하고 종료해 준다.
+
+강제 push 해 주기
+
+레퍼지토리로 강제 push를 해 주면 반영된다.
+
+```bash
+git push -f origin master
+```

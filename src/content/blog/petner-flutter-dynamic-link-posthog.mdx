@@ -1,0 +1,165 @@
+---
+draft: false
+date: "25-03-2021"
+title: "펫트너 일기 - Flutter Firebase Dynamic Link 앱 설치 트래킹 하기 with Posthog 포스트호그"
+category: "devlog"
+tags: ["flutter", "firebase", "posthog", "tracking", "petner", "dart"]
+author: "Siyoon Lee"
+---
+
+현재 펫트너 앱은 Flutter로 만들어지고 있다.
+
+하지만, 앱 설치 트래킹을 하는 데에 있어서 에어브릿지 같은 서비스를 이용하기에는 많은 비용 (월 500??)이 들었다.
+
+그래서 현재 펫트너에서는 비교적 비용이 저렴한 Posthog라는 영국의 웹사이트 분석 서비스를 이용하고 있다.
+
+따라서 Posthog의 분석 서비스를 이용하면서
+
+펫트너 웹 랜딩 페이지의 앱 설치 링크를 눌러 앱을 다운로드했을 때, Posthog에서 랜덤으로 부여한 distinct_id를 앱으로 전달하여 앱에서도 이 사용자를 구분할 수 있도록 하는 방식을 찾고 있었다.
+
+웹에서 사용자에게 distinct_id를 부여한 방식은 javascript에 posthog를 심어 놓았기 때문에 자동적으로 사용자의 웹사이트 내 행동을 분석하면서 distinct_id도 부여해 준 것이다.
+
+웹의 앱 설치 버튼에 Firebase Dynamic Link를 만들어서 넣어 주는 방법은 아래와 같다.
+
+Dynamic Link를 만들어 줄 때 주소에 distinct_id를 넣어 주면
+
+html에서 script 코드를 이용하여 html의 버튼에 Firebase의 API를 통해 만들어진 링크를 넣어 주는 것이다.
+
+```javascript
+window.onload = function() {
+        var distinct_id = posthog.get_distinct_id();
+        var appLink = "https://petnerdev.page.link?distinct_id=" + distinct_id;
+        var promise;
+        var appShortLink;
+        fetch('https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=api_key', {
+          method: 'post',
+          body: JSON.stringify({
+            "dynamicLinkInfo": {
+              "domainUriPrefix": "https://petnerdev.page.link",
+              "link": appLink,
+              "androidInfo": {
+              "androidPackageName": "com.developer.petnerdeveloper"
+              },
+              "desktopInfo": {
+              "desktopFallbackLink": "https://play.google.com/store/apps/details?id=com.developer.petnerdeveloper&distinct_id=" + distinct_id,
+              },
+            }
+          })
+          }).then((res) => {
+            promise = res.json();
+            promise.then((a) => {
+            appShortLink = a.shortLink;
+            $("#googleplay").attr("href", appShortLink);
+          });
+        });
+```
+
+Firebase Dynamic Link REST API 사용법은 아래 링크를 참고하면 된다.
+
+https://firebase.google.com/docs/dynamic-links/rest?hl=ko
+
+이렇게 만들어진 링크를 통해 앱을 설치하고 들어가게 되면, 앱에서 어떤 링크를 타고 들어왔는지 알 수 있는 방법이 있다.
+
+아래 링크에 첨부된 Flutter Firebase Dynamic Link를 이용하면 된다.
+
+https://pub.dev/packages/firebase_dynamic_links
+
+아래의 initDynamicLinks()를 initState에서 불러온다.
+
+그리고 distinctId를 받아온 dynamic link에서 받아와 준다.
+
+```dart
+Uri dynamicLink;
+var parts;
+String distinctId;
+
+  void initDynamicLinks() async {
+    FirebaseDynamicLinks.instance.onLink(onSuccess: (PendingDynamicLinkData dynamicLink) async {
+      final Uri deepLink = dynamicLink?.link;
+
+    }, onError: (OnLinkErrorException e) async {
+      print(e.message);
+    });
+
+    final PendingDynamicLinkData data = await FirebaseDynamicLinks.instance.getInitialLink();
+    final Uri deepLink = data?.link;
+
+    setState(() {
+      dynamicLink = deepLink;
+      parts = dynamicLink.toString().split("=");
+      distinctId = parts[1];
+      print(distinctId);
+    });
+
+  }
+```
+
+이렇게 하면 distinct_id를 받아와 줄 수 있고,
+
+Posthog에서는
+
+https://pub.dev/packages/posthog_flutter
+
+위와 같은 package를 제공하고 있다.
+
+https://posthog.com/docs/integrations/flutter-integration
+
+Flutter integration은 위의 링크를 참고하면 된다.
+
+Posthog에서 사용자를 identify 하고 싶을 때는 아래처럼 해 주면 된다.
+
+```dart
+Posthog().identify(
+  userId: distinctId,
+);
+```
+
+Posthog에서 Anonymous user라고 뜨면 identify 할 때 아래처럼 property를 지정해 주면 된다. 그러면 email로 user가 인식이 된다.
+
+```dart
+Posthog().identify(
+  userId: email,
+  properties: {
+    'email': email,
+  },
+);
+```
+
+Posthog에서 한 유저에 대한 별칭을 지정해 주고 싶을 때는 alias를 이용해 주면 된다.
+
+```dart
+ Posthog().alias(
+   alias: email,
+ );
+```
+
+Posthog에서 사용자의 행동을 캡처하려면 아래와 같이 해 주면 된다.
+
+```dart
+Posthog().capture(
+  eventName: "Open Developer App",
+  properties: {
+    'foo': 'bar',
+    'number': 1337,
+      'clicked': true,
+    },
+);
+```
+
+앱의 어떤 스크린을 보았는지 Posthog에서 확인할 수 있도록 Screen명을 지정할 수 있다.
+
+```dart
+Posthog().screen(
+  screenName: 'Developer Screen',
+);
+```
+
+이렇게 하면 Posthog와 Firebase Dynamic Link를 이용하여 앱 설치 트래킹, 앱 설치 후의 유저의 행동을 분석할 수 있다.
+
+한글 문서가 전무한 Posthog를 이용하다 보니, 내가 일하는 곳인 펫트너의 개발자들은 Posthog의 달인이 되었다고 해도 과언이 아니다.
+
+Posthog 담당자님 보고 계신가요?
+
+Ruby, JavaScript, Flutter로 Posthog를 이용하는 방법이 궁금하시다면 펫트너에 연락해 주세요.
+
+연락 기다리고 있겠습니다. hello@petner.kr

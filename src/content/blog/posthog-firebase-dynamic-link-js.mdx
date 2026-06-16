@@ -1,0 +1,56 @@
+---
+draft: false
+date: "22-03-2021"
+title: "posthog + firebase dynamic link 앱 설치 트래킹 javascript"
+category: "engineering"
+tags: ["javascript", "firebase", "posthog", "tracking"]
+author: "Siyoon Lee"
+---
+
+내가 일하고 있는 회사에서는 현재 posthog로 유저의 웹 내 행동과 앱 내 행동 일부를 기록하고 있다.
+하지만, 웹에서 앱을 다운로드 받은 후 해당 유저가 웹에서 어떤 행동을 했던 유저인지 추적이 이어지지가 않아 문제였다.
+
+따라서, firebase dynamic link로 앱 설치 트래킹을 할 수 있도록 하였다.
+일단 View에서 autocapture 을 하면서 Posthog에서 임의로 사용자에게 distinct id를 부여하는데,
+이 distinct id를 view에서 Javascript로
+
+```javascript
+posthog.get_distinct_id();
+```
+
+를 이용하여 불러온 후, (이것도 posthog 공식 문서에 나와 있지 않아 slack에 물어봐서 알았다. 공식 문서를 자세하게 써 줬으면 하는 바람이 있다. 회사에서 이 서비스를 돈을 지불하고 사용하는데... 걸림돌이 생길 때마다 slack에 물어보아야 해서 좀 답답했다.)
+
+firebase dynamic link의 rest api를 사용하여 링크를 만들어 준다. firebase dynamic link 만드는 법은 아래 두 개를 참고하시면 됩니다.
+
+[firebase.google.com/docs/dynamic-links/rest?hl=ko](https://firebase.google.com/docs/dynamic-links/rest?hl=ko)
+
+[firebase.google.com/docs/reference/dynamic-links/link-shortener?hl=ko](https://firebase.google.com/docs/reference/dynamic-links/link-shortener?hl=ko)
+
+이곳에 나와 있고, 혹시 어쩌다 이 글을 구글링을 통해 발견하였으나 javascript에서 firebase dynamic link를 만드는 방법을 모르는 사람들을 위해 간략하게 설명하자면, fetch를 이용해 post 방식으로 dynamic link를 만들어 주는 것이었다.
+
+```javascript
+fetch('https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=api_key', {
+  method: 'post',
+  body: JSON.stringify({
+    "dynamicLinkInfo": {
+      "domainUriPrefix": "https://example.page.link",
+      "link": "https://www.example.com/",
+      "androidInfo": {
+        "androidPackageName": "com.example.android"
+      },
+      "iosInfo": {
+        "iosBundleId": "com.example.ios"
+      },
+      "desktopInfo": {
+        "desktopFallbackLink": "https://www.example.com/",
+      }
+    }
+  })
+});
+```
+
+android, ios, desktop 등 링크를 누르는 사용자의 기기에 맞게 Info 값을 채워 주면 된다. 이 코드 이후로는 결과값 받아서 편한대로 쓰면 됩니다. (저처럼 한글, 영어 구글링으로도 나오지 않아 고통받는 분들에게 약간의 도움이 되고자...)
+
+이렇게 해서 app download 버튼에 만들어진 링크를 넣어 주면 된다.
+
+그리고 다음 행동은 Flutter 앱에서 package를 사용하여 타고 들어온 링크를 받아 준다.

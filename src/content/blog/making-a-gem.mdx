@@ -1,0 +1,30 @@
+---
+draft: false
+date: "22-11-2023"
+title: "gem을 만들고 있습니다. (1)"
+description: "블로그 이사 때문에 급하게 만든 걸 gem으로 만들어 본 썰"
+category: "devlog"
+tags: ["ruby", "gem", "rubygems", "postype"]
+author: "Siyoon Lee"
+---
+
+import { Image } from 'astro:assets'
+import gem from '@/assets/blog/making-a-gem/gem.webp'
+
+원래는 티스토리 블로그를 쓰고 있었는데, 포스타입에 정착한 후 이전에 작성한 글들을 이전시켜야 할 필요성을 느꼈다.
+
+사실 옛날 회사에서 TIL 쓰던 게 잔뜩이라, TIL은 마크다운 파일로 가지고 있었다.
+
+그래서 일단 마크다운 파일을 html 형식으로 변환하고(다른 사람 gem 써서) 포스타입에 자동으로 올려주기만 하면... 되겠는데? 하고 뚝딱뚝딱 만들어 보니 되더라.
+
+근데, 혹시 모르니... gem으로 만들어 볼까? 하고 일단 포스타입에 자동으로 올려주는 기능만 넣어서 gem으로 1차적으로 만들었다.
+
+[rubygems 사이트](https://rubygems.org/gems/postype_rails)
+
+사실 쓸 사람들이 그리 많진 않을 거다. (한국 루비 사용자가 적기도 하고, postype은 한국 플랫폼이니까....)
+
+근데 분명 저번주에 배포했는데, 왜 153명이나 다운로드한 거죠...? 신기하다. 첫 gem 배포인데, 이유는 모르지만 외면받지 않았어...!
+
+사실 글 등록할 때, 어떤 시리즈에 넣을지 같은 거나... 다양한 것들을 request body에 넣을 수 있는 것 같은데, 이런 디테일은 다음에 또 만들어 보겠다.
+
+<Image src={gem} alt="" />

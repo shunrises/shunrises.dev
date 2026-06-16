@@ -17,7 +17,7 @@
         }
 
         p {
-            @apply text-base leading-relaxed text-secondary-foreground/80;
+            @apply text-base leading-relaxed text-secondary-foreground/80 my-4;
         }
 
         a {
