@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v3.1.3](https://github.com/shunrises/shunrises.dev/releases/tag/v3.1.3) | 2026-06-16
+
+### Bug Fixes
+- 배포 시 asset image 깨짐 [6a16778](https://github.com/shunrises/shunrises.dev/commit/6a16778)
+### Other
+- favicon 변경 [e7c8177](https://github.com/shunrises/shunrises.dev/commit/e7c8177)
+
 ## [v3.1.2](https://github.com/shunrises/shunrises.dev/releases/tag/v3.1.2) | 2026-06-16
 
 ### Bug Fixes
