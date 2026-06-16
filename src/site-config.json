@@ -1,6 +1,6 @@
 {
-  "github": { "owner": "shunrises", "repo": "shunrises.pages.dev" },
-  "domain": "https://shunrises.pages.dev",
+  "github": { "owner": "shunrises", "repo": "shunrises.dev" },
+  "domain": "https://shunrises.dev",
   "bNavigation": true,
   "homeLabel": "home",
   "navigationItems": ["portfolio", "blog"],

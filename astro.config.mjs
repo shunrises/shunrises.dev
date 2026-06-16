@@ -45,5 +45,5 @@ export default defineConfig({
     defaultStrategy: "hover",
   },
 
-  site: "https://shunrises.pages.dev",
+  site: "https://shunrises.dev",
 });
