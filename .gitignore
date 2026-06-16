@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # aureus-setup-anchor
 node_modules/
+
+# shadcn이 자동 생성하는 파일 (Cloudflare 빌드 오류 원인)
+pnpm-workspace.yaml
