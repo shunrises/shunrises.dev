@@ -1,184 +1,189 @@
 {
-  "name": "Jane Doe",
-  "profession": "Senior Solutions Architect",
-  "summary": "Results-driven professional with 8+ years of experience in designing scalable architectures and leading cross-functional teams. Proven track record of improving system efficiency and driving product-led growth. Adept at bridging the gap between technical execution and business strategy",
-  "email": "jane.doe@example.com",
-  "phone": "+1-555-123-4567",
+  "name": "Siyoon Lee",
+  "profession": "Product Engineer",
+  "summary": "문제를 구조화해 제품 우선순위를 설계하고, 제한된 리소스에서 실행 가능한 해법으로 연결하는 프로덕트 엔지니어입니다. 사용자 반응 데이터(PostHog, 커뮤니티 피드백)를 기반으로 개선 루프를 운영하며, K-POP 굿즈 거래 서비스에서 기획·개발·배포·운영·마케팅을 주도해 6개월 동안 최소 비용으로 30,000명의 사용자를 확보했습니다.",
+  "email": "shunrises@gmail.com",
+  "phone": "",
   "location": {
-    "city": "San Francisco",
-    "state": "CA",
-    "country": "USA",
-    "postalCode": "94105"
+    "city": "Uijeongbu",
+    "state": "Gyeonggi-do",
+    "country": "South Korea",
+    "postalCode": "11709"
   },
-  "website": "https://janedoe.dev",
+  "website": "https://shunrises.pages.dev",
   "socials": [
     {
       "platform": "linkedin",
-      "username": "janedoe",
-      "url": "https://linkedin.com/in/janedoe"
+      "username": "siyoon-lee",
+      "url": "https://www.linkedin.com/in/siyoon-lee"
     },
     {
       "platform": "github",
-      "username": "jd123",
-      "url": "https://github.com/jd123"
+      "username": "shunrises",
+      "url": "https://github.com/shunrises"
     },
     {
       "platform": "twitter",
-      "username": "jane_doe",
-      "url": "https://twitter.com/jane_doe"
+      "username": "DevShunrises",
+      "url": "https://twitter.com/DevShunrises"
     }
   ],
   "experience": [
     {
-      "organization": "TechNova Solutions",
-      "position": "Senior Solutions Architect",
-      "employmentType": "Full-time",
-      "location": "San Francisco, CA",
-      "startDate": "2020-03-01",
-      "endDate": "Present",
-      "responsibility": "Leading the core infrastructure team to build high-availability microservices for enterprise clients.",
-      "highlights": ["Architected a new data pipeline that reduced processing time by 40% using event-driven architecture.", "Mentored a team of 5 junior to mid-level engineers, resulting in a 20% increase in sprint velocity.", "Spearheaded the migration from monolithic architecture to containerized services using Docker and Kubernetes."],
-      "technologies": ["Go", "Node.js", "Kubernetes", "AWS", "PostgreSQL"]
+      "organization": "한국음식물처리기협동조합",
+      "position": "소프트웨어 엔지니어",
+      "employmentType": "Contract",
+      "location": "Remote",
+      "startDate": "2024-06-01",
+      "endDate": "2025-03-01",
+      "responsibility": "WordPress 기반 사이트의 운영 리스크를 줄이기 위해 운영 안정성과 비용 효율을 기준으로 단계적 재구축을 주도했습니다.",
+      "highlights": [
+        "그누보드6 + DB 마이그레이션 + Lightsail 1차 배포 후 데이터 무결성 이슈 식별",
+        "v0 + Next.js + Supabase 기반으로 전환해 운영비 0원 구조 달성",
+        "비개발자용 관리자 기능 세분화로 운영 자립 체계 구축"
+      ],
+      "technologies": ["Next.js", "Supabase", "TypeScript", "AWS Lightsail"]
     },
     {
-      "organization": "Innovatech Inc.",
-      "position": "Senior Software Engineer",
-      "employmentType": "Full-time",
-      "location": "San Francisco, CA",
-      "startDate": "2016-06-01",
-      "endDate": "2020-02-29",
-      "responsibility": "Designed and implemented scalable backend services for a high-traffic e-commerce platform.",
-      "highlights": ["Developed a recommendation engine that increased user engagement by 25% using machine learning algorithms.", "Optimized database queries, resulting in a 30% reduction in page load times.", "Collaborated with cross-functional teams to deliver new features on time, contributing to a 15% increase in revenue."],
-      "technologies": ["Python", "Django", "AWS", "Redis", "MySQL"]
+      "organization": "KUKKA",
+      "position": "소프트웨어 엔지니어",
+      "employmentType": "Freelance",
+      "location": "단기 외주 - Remote",
+      "startDate": "2023-11-01",
+      "endDate": "2023-12-31",
+      "responsibility": "모바일 애플리케이션 서비스 안정성을 목표로 null-safety 이전 Flutter 레거시 코드 마이그레이션 및 결제·스토어 등록 문제를 해결했습니다.",
+      "highlights": [
+        "null-safety 이전 Flutter 레거시 코드 마이그레이션 및 Play Store 배포 이슈 해결",
+        "백엔드→FCM→모바일 앱 payload 구조 문제 식별(iOS 정상·Android 미수신) 후 고객사 수정 요청 전달"
+      ],
+      "technologies": ["Flutter", "Dart", "FCM"]
     },
     {
-      "organization": "CloudTech Solutions",
-      "position": "Full Stack Engineer",
+      "organization": "Team Milestone",
+      "position": "소프트웨어 엔지니어",
+      "employmentType": "Freelance",
+      "location": "Seoul, South Korea",
+      "startDate": "2022-09-01",
+      "endDate": "2023-05-31",
+      "responsibility": "초기 창업팀의 모호한 요구사항을 출시 가능한 MVP 범위로 구체화해 예산·기간 내 실행 가능한 개발 계획으로 전환했습니다.",
+      "highlights": [
+        "아이디어 단계 요구사항 구조화, 사용자 시나리오·핵심 플로우 문서화",
+        "Must/Optional 분리 기반 MVP 범위 확정 및 일정·예산 제약 반영",
+        "Sharenine/Mealer 프로젝트 문제정의·우선순위 설계 주도"
+      ],
+      "technologies": ["Flutter", "Ruby on Rails"]
+    },
+    {
+      "organization": "Petner",
+      "position": "소프트웨어 엔지니어",
       "employmentType": "Full-time",
-      "location": "San Francisco, CA",
-      "startDate": "2014-01-01",
-      "endDate": "2016-05-31",
-      "responsibility": "Developed and maintained web applications for cloud-based services.",
-      "highlights": ["Implemented a real-time analytics dashboard that provided actionable insights to clients, leading to a 10% increase in customer retention.", "Contributed to the development of a multi-tenant SaaS platform, resulting in a 20% growth in the customer base.", "Worked closely with the product team to translate business requirements into technical specifications, ensuring successful project delivery."],
-      "technologies": ["JavaScript", "React", "Node.js", "AWS", "MongoDB"]
+      "location": "Seoul, South Korea",
+      "startDate": "2021-01-01",
+      "endDate": "2022-06-30",
+      "responsibility": "인턴에서 정규직으로 전환하며, 제한된 리소스 환경에서 사용자 이탈 분석 체계와 실시간 케어 기능, 저비용 유입 실험 기반을 구축했습니다.",
+      "highlights": [
+        "PostHog 이벤트 설계·적용으로 방문/클릭 기반 이탈 구간 추적 체계 구축",
+        "Firebase Dynamic Links + PostHog 조합으로 유입 소재→설치→가입 퍼널 추적 체계 구축",
+        "Agora 기반 실시간 스트리밍 도입 및 Rails API + AWS S3 다시보기 저장 구조 구현",
+        "MBTI 기반 유입 실험 기획·채택으로 유료 광고 없는 트래픽 확보 경로 설계"
+      ],
+      "technologies": ["Flutter", "Ruby on Rails", "PostHog", "Firebase", "Agora SDK", "AWS S3"]
     }
   ],
   "education": [
     {
-      "institution": "State University of Technology",
-      "degree": "Master of Science",
+      "institution": "Hongik University",
+      "degree": "Bachelor of Engineering",
       "fieldOfStudy": "Computer Science",
-      "startDate": "2012-09-01",
-      "endDate": "2014-06-30",
-      "grade": "3.8/4.0",
-      "coursework": ["Advanced Algorithms", "Distributed Systems", "Cloud Computing", "Machine Learning"]
-    },
-    {
-      "institution": "Global College",
-      "degree": "Bachelor of Science",
-      "fieldOfStudy": "Information Technology",
-      "startDate": "2008-09-01",
-      "endDate": "2012-06-30",
-      "grade": "3.6/4.0",
-      "coursework": ["Data Structures", "Database Systems", "Software Engineering", "Operating Systems"]
+      "startDate": "2020-03-01",
+      "endDate": "Present",
+      "grade": "",
+      "coursework": ["GDSC Hongik University Flutter Core Member (Mentor), 2022"]
     }
   ],
   "skills": [
     {
-      "name": "Programming Languages",
-      "tags": ["Go", "Python", "JavaScript", "Java"]
-    },
-    {
-      "name": "Cloud Platforms",
-      "tags": ["AWS", "Azure", "Google Cloud"]
-    },
-    {
-      "name": "DevOps Tools",
-      "tags": ["Docker", "Kubernetes", "Terraform"]
-    },
-    {
-      "name": "Databases",
-      "tags": ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+      "name": "Programming",
+      "tags": ["Dart", "Ruby", "JavaScript", "TypeScript"]
     },
     {
       "name": "Frameworks",
-      "tags": ["Django", "React", "Node.js"]
+      "tags": ["Flutter", "Ruby on Rails", "Next.js"]
+    },
+    {
+      "name": "Tools",
+      "tags": ["Firebase", "AWS S3", "PostHog", "Supabase", "Git/GitHub"]
     }
   ],
   "projects": [
     {
-      "name": "DataFlow Analytics",
-      "description": "An open-source telemetry dashboard for monitoring real-time server metrics with low overhead",
-      "url": "https://dataflow.com",
-      "highlights": ["Achieved 1,000+ stars on GitHub within the first 6 months of release.", "Implemented WebSocket connections to handle 10k+ concurrent data streams."],
-      "technologies": ["Vue.js", "Node.js", "Redis", "WebSockets"]
+      "name": "덕틸리티 (K-POP 아이돌 취향표 이미지 생성기)",
+      "description": "K-POP 팬덤 사용자를 위한 취향표 이미지 생성 서비스. 2022년부터 운영하며 기능 출시-피드백 반영 사이클을 지속 운영.",
+      "url": "",
+      "highlights": [
+        "기능 출시 10일 내 X에서 노출 463만, 참여 65만, 링크 클릭 14만 기록",
+        "AI 에이전트 활용 워크플로우 설계로 1인 개발 병목 해소",
+        "트래픽 급증 이후 구조 최적화로 운영 비용 절감"
+      ],
+      "technologies": ["Next.js", "Supabase", "TypeScript"]
     },
     {
-      "name": "E-commerce Recommendation Engine",
-      "description": "A machine learning-based recommendation engine that increases user engagement on e-commerce platforms.",
-      "url": "https://ecomrecommender.com",
-      "highlights": ["Increased user engagement by 25% through personalized product recommendations.", "Utilized collaborative filtering and content-based algorithms to improve recommendation accuracy."],
-      "technologies": ["Python", "Scikit-learn", "TensorFlow", "AWS"]
+      "name": "최애마켓",
+      "description": "K-POP 굿즈 양도·교환 과정의 불편을 해결하기 위해 기획·개발·마케팅을 주도한 사내 사이드 프로젝트.",
+      "url": "",
+      "highlights": [
+        "Flutter + Ruby on Rails로 저비용 MVP를 빠르게 출시하고 최소 기능부터 검증",
+        "Twitter 이벤트 기반 확산으로 6개월 내 30,000명 사용자 확보",
+        "초기 반응 확인 후 검색·교환 기능으로 확장"
+      ],
+      "technologies": ["Flutter", "Ruby on Rails"]
     },
     {
-      "name": "Real-time Chat Application",
-      "description": "A scalable real-time chat application built with WebSockets and microservices architecture.",
-      "url": "https://realtimechat.com",
-      "highlights": ["Handled 50k+ concurrent users with low latency using a microservices architecture.", "Implemented end-to-end encryption to ensure user privacy and security."],
-      "technologies": ["Node.js", "WebSockets", "Docker", "Kubernetes", "AWS"]
+      "name": "홍익대학교 웹사이트 색상 보정 크롬 확장 프로그램",
+      "description": "UI 변경 이후 과도한 파란색·노란색 대비로 눈 피로가 커진 문제를 해결하기 위해 기획·개발·배포한 크롬 확장 프로그램.",
+      "url": "",
+      "highlights": [
+        "에브리타임 반응: 좋아요 203·댓글 23·스크랩 294"
+      ],
+      "technologies": ["JavaScript", "Chrome Extensions"]
+    },
+    {
+      "name": "FabricMart 상세페이지 생성 도구",
+      "description": "원단 쇼핑몰 운영 경험에서 상세페이지 제작 리드타임 병목을 확인하고 반복 작업을 줄이기 위해 기획·개발한 생성 도구.",
+      "url": "",
+      "highlights": [
+        "도구 운영으로 콘텐츠 제작 생산성 향상"
+      ],
+      "technologies": ["JavaScript"]
     }
   ],
   "certifications": [
     {
-      "name": "AWS Certified Solutions Architect - Associate",
-      "issuer": "Amazon Web Services",
-      "date": "2021-05-01",
-      "url": "https://aws.amazon.com/certification/solutions-architect-associate/",
-      "credentialId": "AWS-1234567890"
-    }
-  ],
-  "courses": [
-    {
-      "name": "Advanced Cloud Architecture",
-      "issuer": "Udemy",
-      "date": "2023-08-01",
-      "url": "https://www.udemy.com/course/advanced-cloud-architecture/",
-      "credentialId": "UD-9876543210"
+      "name": "GDSC Solution Challenge 2023 Global Top 100",
+      "issuer": "Google Developer Student Clubs",
+      "date": "2023-01-01",
+      "url": "",
+      "credentialId": ""
     },
     {
-      "name": "Machine Learning A-Z",
-      "issuer": "Coursera",
-      "date": "2022-11-01",
-      "url": "https://www.coursera.org/learn/machine-learning",
-      "credentialId": "CR-1234567890"
+      "name": "PostHog Flutter SDK 오픈소스 기여",
+      "issuer": "PostHog",
+      "date": "2021-06-01",
+      "url": "https://github.com/PostHog/posthog-flutter/pull/16",
+      "credentialId": "PR #16"
     }
   ],
+  "courses": [],
   "languages": [
     {
-      "language": "English",
+      "language": "Korean",
       "fluency": "Native"
     },
     {
-      "language": "Spanish",
-      "fluency": "Elementary Level Proficiency"
+      "language": "English",
+      "fluency": "Intermediate"
     }
   ],
-  "volunteering": [
-    {
-      "organization": "Code for Good",
-      "position": "Mentor",
-      "startDate": "2019-01-01",
-      "endDate": "Present",
-      "responsibility": "Mentoring high school students from underrepresented backgrounds in basic web development (HTML, CSS, JavaScript)."
-    }
-  ],
-  "publications": [
-    {
-      "title": "The Future of Serverless Architecture",
-      "publisher": "Tech Journal Monthly",
-      "releaseDate": "2021-08-10",
-      "url": "https://techjournal.example.com/serverless",
-      "description": "A comprehensive analysis of cold starts and mitigation strategies in AWS Lambda."
-    }
-  ]
+  "volunteering": [],
+  "publications": []
 }

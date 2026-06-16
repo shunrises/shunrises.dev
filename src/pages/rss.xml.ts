@@ -16,8 +16,8 @@ export async function GET(context: { site: any }) {
 
   return rss({
     trailingSlash: false,
-    title: "Ryze Blog",
-    description: "A reader-friendly blog with accessibility, SEO and responsiveness out of the box",
+    title: "shunrises.dev",
+    description: "공부한 내용, 개발 과정에서의 고민, 프로젝트 경험을 기록하며 기술과 좋아하는 문화를 연결하는 공간입니다.",
     site: context.site,
     items: items.map((item) => ({
       link: `/blog/${item.id}`,
@@ -31,6 +31,6 @@ export async function GET(context: { site: any }) {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       }),
     })),
-    customData: `<language>en-us</language>`,
+    customData: `<language>ko</language>`,
   });
 }

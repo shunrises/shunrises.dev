@@ -5,6 +5,7 @@
 @import "@fontsource-variable/jetbrains-mono";
 @import "@fontsource-variable/geist-mono";
 @import "@fontsource-variable/geist";
+@import "pretendard/dist/web/static/pretendard.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -50,8 +51,9 @@
     /* font */
     --font-heading: var(--font-sans);
     /* --font-mono: "JetBrains Mono Variable", monospace; */
-    --font-mono: "Geist Mono Variable", monospace;
-    --font-sans: "Geist Variable", sans-serif;
+    --font-geist: "Geist Mono Variable", monospace;
+    --font-mono: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 
     /* color */
     --color-sidebar-ring: var(--sidebar-ring);
@@ -194,7 +196,7 @@
     --pf-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
     --pf-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.2);
     --pf-outline-focus: var(--ring);
-    --pf-font: "Geist Variable", sans-serif;
+    --pf-font: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
     --pf-input-height: 40px;
     --pf-input-font-size: 16px;
     --pf-border-radius: 0.375rem;

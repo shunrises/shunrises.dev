@@ -1,6 +1,6 @@
 {
-  "github": { "owner": "A58361", "repo": "ryze" },
-  "domain": "https://ryze.pages.dev",
+  "github": { "owner": "shunrises", "repo": "shunrises.pages.dev" },
+  "domain": "https://shunrises.pages.dev",
   "bNavigation": true,
   "homeLabel": "home",
   "navigationItems": ["portfolio", "blog"],
@@ -9,28 +9,32 @@
   "bRssFeed": true,
   "bIntroduction": true,
   "introduction": {
-    "badges": ["Software Developer"],
-    "heading": "Jane Doe",
+    "badges": ["Product Engineer"],
+    "heading": "Siyoon Lee",
     "subHeadingItems": [
       {
         "type": "mail",
-        "label": "jane.doe@example.com",
-        "url": "mailto:john.doe@example.com"
+        "label": "shunrises@gmail.com",
+        "url": "mailto:shunrises@gmail.com"
       },
       {
         "type": "address",
-        "label": "San Francisco, CA",
-        "url": "https://www.google.com/maps/place/San+Francisco"
+        "label": "Uijeongbu, South Korea",
+        "url": "https://maps.app.goo.gl/EiYFoi26cbAUz3HZ8"
       }
     ],
     "socialItems": [
-      { "type": "linkedin", "url": "https://linkedin.com" },
-      { "type": "github", "url": "https://github.com" },
-      { "type": "twitter", "url": "https://twitter.com" }
+      { "type": "linkedin", "url": "https://www.linkedin.com/in/siyoon-lee" },
+      { "type": "github", "url": "https://github.com/shunrises" },
+      { "type": "twitter", "url": "https://twitter.com/DevShunrises" }
     ],
-    "description": "Ryze is a modern personal portfolio and mini blog starter built with Astro 6, React 19, and Tailwind CSS 4. It ships with a blog engine, portfolio system, RSS feed, site search, og images and much more.",
+    "description": "문제 발견부터 기획, 개발, 배포, 운영까지 전 과정을 경험하고 싶은 프로덕트 엔지니어입니다. 작은 아이디어가 실제 사용자의 경험이 되는 과정에 관심이 있으며, 더 나은 제품을 만들기 위한 고민과 배움을 이어가고 있습니다.",
     "ctaItems": [{ "label": "Resume", "url": "/resume", "variant": "default" }],
-    "support": { "label": "Star on Github", "url": "https://github.com/A58361/Ryze", "variant": "outline" }
+    "support": {
+      "label": "Sponsor",
+      "url": "https://github.com/sponsors/shunrises",
+      "variant": "outline"
+    }
   },
   "featured": {
     "portfolio": { "visible": true },

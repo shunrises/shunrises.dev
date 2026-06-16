@@ -2,8 +2,8 @@ import satori from "satori";
 import sharp from "sharp";
 import fs from "node:fs";
 
-const regularFont = fs.readFileSync("src/assets/fonts/Geist-Regular.ttf");
-const boldFont = fs.readFileSync("src/assets/fonts/Geist-Bold.ttf");
+const regularFont = fs.readFileSync("src/assets/fonts/Pretendard-Regular.ttf");
+const boldFont = fs.readFileSync("src/assets/fonts/Pretendard-Bold.ttf");
 
 export interface OGOptions {
   title: string;
@@ -29,7 +29,7 @@ export async function generateOGImage({
           display: "flex",
           flexDirection: "column",
           padding: "60px 80px",
-          fontFamily: "Geist",
+          fontFamily: "Pretendard",
         },
         children: [
           {
@@ -52,7 +52,7 @@ export async function generateOGImage({
                   type: "span",
                   props: {
                     style: { fontSize: 20, color: "#a1a1aa", fontWeight: 400 },
-                    children: "Ryze",
+                    children: "shunrises.dev",
                   },
                 },
               ],
@@ -139,13 +139,13 @@ export async function generateOGImage({
       height: 630,
       fonts: [
         {
-          name: "Geist",
+          name: "Pretendard",
           data: regularFont,
           weight: 400,
           style: "normal",
         },
         {
-          name: "Geist",
+          name: "Pretendard",
           data: boldFont,
           weight: 700,
           style: "normal",

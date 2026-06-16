@@ -15,14 +15,14 @@ export interface Props {
 }
 
 const {
-    title = "Ryze",
-    description = "A minimalist Astro starter for personal portfolio and blogs.",
-    author = "Subhashis Hansda",
+    title = "shunrises.dev",
+    description = "공부한 내용, 개발 과정에서의 고민, 프로젝트 경험을 기록하며 기술과 좋아하는 문화를 연결하는 공간입니다.",
+    author = "Siyoon Lee",
     canonicalURL = new URL(Astro.url.pathname, Astro.url),
     pubDate,
     image,
     type = "website",
-    locale = "en_US",
+    locale = "ko_KR",
     tags,
 } = Astro.props;
 
@@ -36,7 +36,7 @@ const imageURL = image ? new URL(image, Astro.site) : undefined;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="alternate" type="application/rss+xml" title="Ryze" href={new URL("rss.xml", Astro.site)} />
+    <link rel="alternate" type="application/rss+xml" title="shunrises.dev" href={new URL("rss.xml", Astro.site)} />
     <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
     <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
     <ClientRouter />
@@ -51,7 +51,7 @@ const imageURL = image ? new URL(image, Astro.site) : undefined;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content={type} />
-    <meta property="og:site_name" content="Ryze" />
+    <meta property="og:site_name" content="shunrises.dev" />
 
     {imageURL && <>
         <meta property="og:image" content={imageURL} />

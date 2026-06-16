@@ -46,14 +46,14 @@
         }
 
         code:not(pre code) {
-            @apply px-1 py-0.5 border border-border text-sm rounded font-mono bg-muted text-secondary-foreground/80;
+            @apply px-1 py-0.5 border border-border text-sm rounded font-geist bg-muted text-secondary-foreground/80;
         }
 
         pre.astro-code {
             @apply my-6 overflow-x-auto text-sm leading-relaxed;
         }
         pre.astro-code code {
-            @apply bg-muted p-3 text-sm font-mono leading-relaxed block;
+            @apply bg-muted p-3 text-sm font-geist leading-relaxed block;
         }
         pre.astro-code .line {
             @apply visible;
@@ -119,7 +119,7 @@
         }
 
         kbd {
-            @apply text-secondary-foreground px-1.5 py-0.5 text-xs font-mono border border-secondary-foreground;
+            @apply text-secondary-foreground px-1.5 py-0.5 text-xs font-geist border border-secondary-foreground;
         }
 
         mark {
