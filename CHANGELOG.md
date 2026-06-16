@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v3.1.1](https://github.com/shunrises/shunrises.pages.dev/releases/tag/v3.1.1) | 2026-06-16
+
+### Bug Fixes
+- pnpm-workspace.yaml 제거로 Cloudflare Pages 빌드 오류 수정 [5312758](https://github.com/shunrises/shunrises.pages.dev/commit/5312758)
+### Other
+- README, CHANGELOG 정리 [f4e1ff2](https://github.com/shunrises/shunrises.pages.dev/commit/f4e1ff2)
+
 ## [v3.1.0](https://github.com/shunrises/shunrises.github.io/releases/tag/v3.1.0) | 2026-06-16
 
 ### Features
