@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v3.1.0](https://github.com/shunrises/shunrises.github.io/releases/tag/v3.1.0) | 2026-06-16
+
+### Features
+- 블로그 기본 정보 및 디자인 변경 [7492b9c](https://github.com/shunrises/shunrises.github.io/commit/7492b9c)
+### Other
+- Initial commit [96f2674](https://github.com/shunrises/shunrises.github.io/commit/96f2674)
+
 ## [v3.0.0](https://github.com/A58361/Ryze/releases/tag/v3.0.0) | 2026-06-01
 
 ### Features
