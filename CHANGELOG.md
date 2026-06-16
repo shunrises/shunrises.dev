@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v3.1.2](https://github.com/shunrises/shunrises.dev/releases/tag/v3.1.2) | 2026-06-16
+
+### Bug Fixes
+- pnpm build 오류 [5eccbfa](https://github.com/shunrises/shunrises.dev/commit/5eccbfa)
+### Other
+- domain 변경 [e6d0133](https://github.com/shunrises/shunrises.dev/commit/e6d0133)
+
 ## [v3.1.1](https://github.com/shunrises/shunrises.dev/releases/tag/v3.1.1) | 2026-06-16
 
 ### Bug Fixes
