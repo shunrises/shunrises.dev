@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v3.2.1](https://github.com/shunrises/shunrises.dev/releases/tag/v3.2.1) | 2026-06-17
+
+### Bug Fixes
+- giscus 디자인 변경 [1a13179](https://github.com/shunrises/shunrises.dev/commit/1a13179)
+
 ## [v3.2.0](https://github.com/shunrises/shunrises.dev/releases/tag/v3.2.0) | 2026-06-16
 
 ### Features
