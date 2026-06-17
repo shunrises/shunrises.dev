@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v3.2.2](https://github.com/shunrises/shunrises.dev/releases/tag/v3.2.2) | 2026-06-17
+
+### Bug Fixes
+- 배포 시 테마 적용 안 됨 [0107b4b](https://github.com/shunrises/shunrises.dev/commit/0107b4b)
+
 ## [v3.2.1](https://github.com/shunrises/shunrises.dev/releases/tag/v3.2.1) | 2026-06-17
 
 ### Bug Fixes
