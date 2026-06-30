@@ -97,7 +97,7 @@
       "fieldOfStudy": "Computer Science",
       "startDate": "2020-03-01",
       "endDate": "Present",
-      "grade": "",
+      "grade": "Senior",
       "coursework": ["GDSC Hongik University Flutter Core Member (Mentor), 2022"]
     }
   ],
@@ -119,7 +119,7 @@
     {
       "name": "덕틸리티 (K-POP 아이돌 취향표 이미지 생성기)",
       "description": "K-POP 팬덤 사용자를 위한 취향표 이미지 생성 서비스. 2022년부터 운영하며 기능 출시-피드백 반영 사이클을 지속 운영.",
-      "url": "",
+      "url": "https://ducktility.studio",
       "highlights": [
         "기능 출시 10일 내 X에서 노출 463만, 참여 65만, 링크 클릭 14만 기록",
         "AI 에이전트 활용 워크플로우 설계로 1인 개발 병목 해소",
@@ -141,7 +141,7 @@
     {
       "name": "홍익대학교 웹사이트 색상 보정 크롬 확장 프로그램",
       "description": "UI 변경 이후 과도한 파란색·노란색 대비로 눈 피로가 커진 문제를 해결하기 위해 기획·개발·배포한 크롬 확장 프로그램.",
-      "url": "",
+      "url": "https://github.com/keepwa1king/hongik-website-color-changer",
       "highlights": [
         "에브리타임 반응: 좋아요 203·댓글 23·스크랩 294"
       ],
@@ -149,8 +149,8 @@
     },
     {
       "name": "FabricMart 상세페이지 생성 도구",
-      "description": "원단 쇼핑몰 운영 경험에서 상세페이지 제작 리드타임 병목을 확인하고 반복 작업을 줄이기 위해 기획·개발한 생성 도구.",
-      "url": "",
+      "description": "원단 쇼핑몰 파트타임 경험에서 상세페이지 제작에 시간이 많이 걸리는 것을 확인하고 반복 작업을 줄이기 위해 기획·개발한 유틸리티.",
+      "url": "https://fabricmart.web.app",
       "highlights": [
         "도구 운영으로 콘텐츠 제작 생산성 향상"
       ],
@@ -162,7 +162,7 @@
       "name": "GDSC Solution Challenge 2023 Global Top 100",
       "issuer": "Google Developer Student Clubs",
       "date": "2023-01-01",
-      "url": "",
+      "url": "https://developers.google.com/community/gdsc-solution-challenge/winners?hl=ko",
       "credentialId": ""
     },
     {
