@@ -30,6 +30,17 @@
   ],
   "experience": [
     {
+      "organization": "크리에이티브멋 플랫폼사업본부 온라인플랫폼팀",
+      "position": "풀스택 소프트웨어 엔지니어",
+      "employmentType": "Full-time",
+      "location": "Seoul, South Korea",
+      "startDate": "2026-08-10",
+      "endDate": "Present",
+      "responsibility": "팬덤 기반 플랫폼 사업에서 팬의 행동을 기준으로 기능과 실험을 제안하고, 티켓 예매, 오프라인 현장 서비스, 운영자 도구, 통합 로그인 등 플랫폼 전반의 서비스를 백엔드부터 프론트엔드까지 개발합니다.",
+      "highlights": [],
+      "technologies": ["Quarkus", ".NET", "React Router", "Oracle", "Keycloak", "Kubernetes"]
+    },
+    {
       "organization": "한국음식물처리기협동조합",
       "position": "소프트웨어 엔지니어",
       "employmentType": "Contract",

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v3.3.0](https://github.com/shunrises/shunrises.dev/releases/tag/v3.3.0) | 2026-11-15
+
+### Features
+- resume에 크리에이티브멋 경력 추가 [0e16fcb](https://github.com/shunrises/shunrises.dev/commit/0e16fcb)
+### Bug Fixes
+- resume 내용 정정 [3696b86](https://github.com/shunrises/shunrises.dev/commit/3696b86)
+
 ## [v3.2.2](https://github.com/shunrises/shunrises.dev/releases/tag/v3.2.2) | 2026-06-17
 
 ### Bug Fixes
